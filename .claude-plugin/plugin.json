@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "simplify-changes",
   "version": "0.1.0",
-  "description": "A strict, behaviour-preserving simplification pass for the diff of a change: error handling is never deleted inside a cleanup, and real bugs are flagged, not fixed.",
+  "description": "A strict, behavior-preserving simplification pass for the diff of a change: error handling is never deleted inside a cleanup, and real bugs are flagged, not fixed.",
   "author": {
     "name": "nemesis398",
     "url": "https://github.com/nemesis398"

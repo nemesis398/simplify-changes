@@ -3,7 +3,7 @@ max_turns: 6
 allowed_tools: [Skill]
 ---
 
-Clean up the naming and layout of this staged change, and keep its behavior.
+Run the strict pass on this change.
 
 ```python
 def page_items(items: list, page: int, size: int) -> list:

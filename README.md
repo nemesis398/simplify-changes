@@ -23,7 +23,8 @@ null checks or retry logic, or code that someone else depends on.
   and free) and altitude.
 - **Restraint.** Formatting, renames without a reason, untouched code and
   abstractions are left alone. A new abstraction is handed to the
-  `conscience` skill rather than waved through.
+  [`conscience`](https://github.com/nemesis398/conscience) skill, an optional
+  companion, or argued explicitly in the report if it is not installed.
 
 Every pass ends with a report of four parts: *Simplified*, *Left alone*,
 *Flagged, not fixed* and *Verification*.

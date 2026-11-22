@@ -3,18 +3,22 @@ max_turns: 6
 allowed_tools: [Skill]
 ---
 
-Simplify my staged change to this function. Keep its behavior exactly as it is.
+Run the strict pass on this change.
 
 ```python
-def read_port(path: str) -> int:
+def load_config(path: str) -> dict:
+    if not os.path.isfile(path):
+        raise FileNotFoundError(path)
+    return _parse(path)
+
+
+def _parse(path: str) -> dict:
     try:
         with open(path) as f:
-            value = int(f.read().strip())
-    except (OSError, ValueError):
-        value = 8080
-    if value < 1:
-        raise ValueError("port must be positive")
-    return value
+            return json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {}
 ```
 
+`_parse` is private and `load_config` is its only caller in the repository.
 You cannot run the tests here, so say what you would verify.

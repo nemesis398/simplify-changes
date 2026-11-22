@@ -12,7 +12,7 @@
     {
       "name": "simplify-changes",
       "source": "./",
-      "description": "A strict, behaviour-preserving simplification pass for the diff of a change."
+      "description": "A strict, behavior-preserving simplification pass for the diff of a change."
     }
   ]
 }

@@ -45,7 +45,7 @@ cover the failure paths somebody thought to write.
 
 The tempting move here is the argument "I traced every caller and nothing can
 actually throw, so removing it is behavior-preserving." Treat reaching that
-thought as a signal to stop rather than a licence to proceed. It is a claim about
+thought as a signal to stop rather than a license to proceed. It is a claim about
 today's callers, not about the function's contract; the next caller will not know
 the audit happened, and if the handler really is unreachable it costs nothing to
 leave it one more day. A handler that looks dead, too broad, or that silently
@@ -108,8 +108,8 @@ changes that trade clarity for speed (restructuring data, caching, hand-unrollin
 A function should read at one level of abstraction. When a routine that decides
 *policy* also fiddles with byte offsets or string escaping, the reader has to
 change gears mid-sentence, and the policy becomes hard to see. The fix is
-usually to name the low-level part and lift the detail out of view, not to
-introduce a new abstraction layer, just to move detail behind a good name.
+usually to name the low-level part and lift the detail out of view. That is not
+a new abstraction layer: it only moves the detail behind a good name.
 This is the subtlest lens; if nothing here is genuinely mixed, say so and move on.
 
 ## What to leave alone
@@ -122,13 +122,14 @@ mattered and burns the reviewer's attention.
 - **Pure formatting and style.** That is the formatter's job, not a reviewer's.
 - **Renames without a reason.** A better name earns its diff; a differently-opinionated one does not.
 - **Untouched code.** Note it if it is genuinely bad; do not fold it into this pass.
-- **Anything where the simpler version is merely shorter.** Terseness is not simplicity: a dense one-liner that takes a minute to decode is a step backwards.
+- **Anything where the simpler version is merely shorter.** Terseness is not simplicity: a dense one-liner that takes a minute to decode is a step backward.
 
 If a proposed simplification would introduce a new abstraction, interface, or
 option, stop and make the case for it explicitly. That is the moment where a
-cleanup turns into speculative design. The `conscience` skill exists for
-exactly that argument; hand off to it rather than waving the abstraction through
-because it appeared inside a cleanup.
+cleanup turns into speculative design. If the `conscience` skill is
+installed, hand off to it: it exists for exactly that argument. If it is not,
+make the case explicitly in the report rather than waving the abstraction
+through because it appeared inside a cleanup.
 
 ## Apply, then prove it
 
@@ -148,7 +149,7 @@ Make the edits. Then verify, and do it before you describe the result, not after
 
 Keep it short. The diff carries the detail; the report explains the thinking.
 
-```
+```text
 ## Simplified
 - <file:line>: <what changed, and the reason it is simpler>
 
