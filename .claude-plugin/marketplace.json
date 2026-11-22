@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "simplify-changes",
+  "owner": {
+    "name": "nemesis398",
+    "url": "https://github.com/nemesis398"
+  },
+  "metadata": {
+    "description": "The simplify-changes skill for Claude Code, as a marketplace of one."
+  },
+  "plugins": [
+    {
+      "name": "simplify-changes",
+      "source": "./",
+      "description": "A strict, behaviour-preserving simplification pass for the diff of a change."
+    }
+  ]
+}
